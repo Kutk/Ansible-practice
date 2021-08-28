@@ -1,0 +1,18 @@
+---
+ - name: Practice using vars
+   hosts: localhost
+   gather_facts: no
+   vars:
+    x: 23
+    num: 999.8799
+    my_name: "kutk"
+    my_bool: yes
+
+   tasks:
+   - debug: 
+      #var: x
+      msg: 
+       - "The value of x is {{x}} and type: {{x|type_debug}}"
+       - "The value of num is {{num}} type: {{num|type_debug}}"
+       - "The value of my_name is {{my_name}} type: {{my_name|type_debug}}"
+       - "The value of my_bool is {{my_bool}} type: {{my_bool|type_debug}}"

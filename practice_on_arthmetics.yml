@@ -1,0 +1,22 @@
+---
+ - name: Practice on Arthmetic Operators
+   hosts: group1
+   gather_facts: no
+   vars_prompt:
+    - name: z
+      prompt: Please enter a z value
+      private: no
+    - name: w
+      prompt: Please enter a w value
+      private: no
+   vars:
+    x: 49
+    y: "{{x+5}}"
+   tasks:
+   - debug:
+      msg:
+       - "The value of x is: {{x}}"
+       - "The value of y is: {{y}}"
+       - "The value of z is: {{z}}"
+       - "The value of w is: {{w}}"
+       - "The additional of {{z}} and {{w}} is {{z|int+w|int}}"

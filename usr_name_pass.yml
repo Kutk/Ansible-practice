@@ -1,0 +1,13 @@
+---
+ - hosts: group1
+   gather_facts: no
+   vars_prompt:
+   - name: usr_name
+     prompt: Enter your usr name
+     private: no
+   - name: usr_pass
+     prompt: Enter your password
+   tasks:
+   - debug:
+      msg:
+       - "The username is: {{usr_name}} and password is {{usr_pass}}"  

@@ -1,0 +1,10 @@
+---
+ - name: Read variables from files
+   hosts: group1
+   vars_files: 
+    - variables.yml 
+    - variables.json
+   gather_facts: no
+   tasks:
+   - debug: var=q
+      

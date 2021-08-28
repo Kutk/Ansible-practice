@@ -1,0 +1,10 @@
+---
+ - name: This is a simple playbook to understand cmd line args
+   hosts: group1
+   gather_facts: no
+   become: yes
+   tasks:
+   - name: working with {{pkgs}}
+     yum:
+      name: "{{pkgs}}"
+      state: "{{req_state}}"

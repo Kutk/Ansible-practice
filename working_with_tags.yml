@@ -1,0 +1,26 @@
+---
+ - name: play with 5 tasks
+   hosts: group1
+   gather_facts: no
+   tasks:
+   - debug: 
+      msg: "This is first task"
+     tags: 
+      - first
+      - common
+      #- never                     #This tag will tell hosts not to execute this task and hide the tag of this task
+      #- always                    #This tag will tell hosts always to execute this task
+   - debug:                       
+      msg: "This is second task"
+     tags: second
+   - debug: 
+      msg: "This is third task"
+     tags: 
+      - third
+      - common
+   - debug: 
+      msg: "This is fourth task"
+     tags: fourth
+   - debug: 
+      msg: "This is fifth task"
+     tags: fifth

@@ -1,0 +1,12 @@
+---
+ - name: Demonstrate verbosity with debug mode
+   hosts: all
+   gather_facts: no
+   tasks:
+   - name: Verbosity as default
+     debug: 
+      msg: "this is default msg"
+   - name: verbosity is 2
+     debug:
+      msg: "Verbosity is 2" 
+      verbosity: 2

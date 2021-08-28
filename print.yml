@@ -1,0 +1,10 @@
+---
+ - name: Print msg with debug module
+   hosts: localhost
+   gather_facts: no
+   tasks:
+   - debug:
+      msg:
+       - "Welcome to Ansible Playbooks"
+       - "These are basic concepts"
+       - "Advanced concepts are coming soon"

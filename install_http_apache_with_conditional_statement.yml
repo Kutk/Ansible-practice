@@ -1,0 +1,19 @@
+---
+ - name: simple play to install httpd
+   hosts: all
+   tasks:
+   - debug:
+      msg:
+       - "Node is: {{inventory_hostname}} and Distribution is: {{ansible_distribution}}"
+   - name: installing httpd using yum
+     yum: 
+      name: httpd
+      state: present
+     become: true 
+     when: ansible_distribution != 'Ubuntu'
+   - name: installing apache using apt
+     apt:
+      name: apache2
+      state: present
+     become: true
+     when: ansible_distribution == 'Ubuntu'

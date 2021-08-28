@@ -1,0 +1,17 @@
+---
+ - name: finding os distribution and os name
+   hosts: all
+   gather_facts: no
+   tasks:
+   - name: find os distribution
+     shell:
+      "cat /etc/os-release | awk -F =  'NR==1 {print $2}' | awk '{print $1}' | awk -F '\"' '{print $2}'"
+     register: os_dis
+   - name: Find os name
+     shell: 
+      "uname"
+     register: os_name
+   - debug:
+      msg:
+       - "The os distribution is: {{os_dis.stdout}}"
+       - "The os name is: {{os_name.stdout}}"

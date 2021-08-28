@@ -1,0 +1,17 @@
+---
+ - name: This is a play to remove packages
+   hosts: all
+   gather_facts: no
+   tasks:
+   - name: Removing wget pkg
+     yum: name=wget state=absent
+     become: yes
+   - name: Installing git pkg
+     yum: name=git state=absent
+     become: yes
+ - hosts: group3
+   gather_facts: no
+   tasks:
+   - name: Removing httpd pkg
+     yum: name=httpd state=absent
+     become: yes

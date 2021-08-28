@@ -1,0 +1,11 @@
+---
+ - hosts: all
+   gather_facts: no
+   ignore_errors: true
+   tasks:
+   - shell: "sudo poweroff"
+
+ - hosts: localhost
+   gather_facts: no
+   tasks:
+   - shell: "sudo poweroff"

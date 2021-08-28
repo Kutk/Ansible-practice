@@ -1,0 +1,9 @@
+---
+ - name: please use this with -e "x=<value>"
+   hosts: group1
+   gather_facts: no
+   tasks:
+   - debug: 
+      msg:
+      - The x value is {{x}}
+      - The y value is {{y}} 

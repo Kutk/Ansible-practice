@@ -1,0 +1,16 @@
+---
+ - hosts: localhost
+   gather_facts: no
+   vars:
+    x: 97
+    my_name: "ku"
+   vars_prompt:                                   # Read value from user
+    name: y 
+    prompt: Enter the value for y
+    private: no                                   # Show what user types
+   tasks:
+   - debug:
+      msg:
+       - "The x value is: {{x}}"
+       - "The my_name value is: {{my_name}}"
+       - "The value of y is: {{y}}"

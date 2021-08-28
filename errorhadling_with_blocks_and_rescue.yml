@@ -1,0 +1,14 @@
+---
+ - hosts: group1
+   gather_facts: no
+   tasks:
+   - block:
+      - name: Findind files in /home/ku
+        command: "ls /home/ku/"
+        register: ku_out
+     rescue:
+      - debug:
+         msg: "The given path /home/ku/zack/ does not exist"
+     always:
+      - debug:
+         msg: "This will always execute"

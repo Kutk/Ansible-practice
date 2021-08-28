@@ -1,0 +1,20 @@
+---
+ - name: Working with comparison operators
+   hosts: group1
+   gather_facts: no
+   vars_prompt:
+    - name: x
+      prompt: Enter value for x 
+    - name: y
+      prompt: Enter value for y
+   tasks:
+   - debug:
+      msg:
+       - "The value of x: {{x}} and The value of y: {{y}}"
+       - "x == y: {{ x == y }}"
+       - "x != y: {{ x != y }}"
+       - "x < y: {{ x < y }}"
+       - "x > y: {{ x > y }}"
+       - "x <= y: {{ x <= y }}"
+       - "x >= y: {{ x >= y }}"
+  

@@ -1,0 +1,9 @@
+---
+ x: 45
+ y: 
+  - 4
+  - 67
+  - "ansibkle"
+ pkgs:
+  "linux": "nginx"
+  "ubuntu": "apache2"

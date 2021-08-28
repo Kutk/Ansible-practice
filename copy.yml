@@ -1,0 +1,15 @@
+---
+ - name: This is a play on server node01
+   hosts: group2
+   gather_facts: false  # Disable this can increase efficiency
+   tasks:
+   - name: This is a task to copy a file to managed node
+     copy: src=g2.txt dest=g2.txt
+   - name: This is a task to create an empty file
+     file: path=demo.txt state=touch
+ - name: This is a play on server node03
+   hosts: group3
+   gather_facts: false
+   tasks:
+   - copy: src=g3.txt dest=g3.txt
+   - file: path=dedo.txt state=touch

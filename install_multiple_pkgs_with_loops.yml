@@ -1,0 +1,14 @@
+---
+ - hosts: group1
+   gather_facts: no
+   become: yes
+   tasks:
+   - yum:
+      name: "{{item}}"
+      state: present
+     loop:
+      - gettext-devel
+      - openssl-devel
+      - perl-CPAN
+      - perl-devel
+      - zlib-devel

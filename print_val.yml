@@ -1,0 +1,9 @@
+---
+ - name: print var with debug module
+   hosts: ser
+   gather_facts: no
+   tasks:
+   - name: print a var value
+     debug:
+      msg: "The hostname is: {{inventory_hostname}}"
+      #var: inventory_hostname

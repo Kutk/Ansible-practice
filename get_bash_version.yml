@@ -1,0 +1,10 @@
+---
+ - hosts: localhost
+   gather_facts: no
+   tasks:
+   - shell: "bash --version"
+     register: bash_ver                                                                   # Register is used for storing outputs and still needs to use module debug to output records to monitor
+   - set_fact:
+      bash_version: "{{bash_ver.stdout.split('\n')[0].split()[3]}}"                       # Define variables after execute commands
+   # - debug: var=bash_ver                                                                # This outputs all results but we only need stdout
+   - debug: var=bash_version

@@ -1,0 +1,10 @@
+#!/usr/bin/ansible-playbook
+ - name: Using yum to install some pkgs
+   hosts: localhost
+   gather_facts: no
+   become: yes
+   tasks:
+   - name: Install nano editor
+     yum: name=nano state=present
+   - name: Install httpd
+     yum: name=httpd state=present

@@ -1,0 +1,17 @@
+---
+ - name: install httpd then start httpd
+   hosts: group1
+   gather_facts: no
+   become: yes
+   tasks:
+   - name: installing httpd
+     yum:
+       name: httpd
+       state: present
+     notify: start httpd
+   handlers:
+    - name: start httpd
+      service: 
+        name: httpd
+        state: started
+     

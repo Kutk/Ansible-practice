@@ -1,0 +1,17 @@
+---
+ - name: This is a play to install packages
+   hosts: all
+   gather_facts: no
+   tasks:
+   - name: Installing wget pkg
+     yum: name=wget state=present
+     become: yes
+   - name: Installing git pkg
+     yum: name=git state=present
+     become: yes
+ - hosts: group3
+   gather_facts: no
+   tasks:
+   - name: Installing httpd pkg
+     yum: name=httpd state=present
+     become: yes

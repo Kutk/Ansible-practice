@@ -1,0 +1,21 @@
+---
+ - hosts: localhost
+   gather_facts: no
+   vars:
+    z: 9998
+    #pkgs: ['vim', 'htop', 'httpd', 'nginx']
+    pkgs:
+    - 'vim'
+    - 'htop'
+    - 'httpd'
+    - 'nginx'
+    web_servers: {'Linux': 'httpd', 'ubuntu': 'apache2'}
+   tasks:
+    - debug:
+      #var: z
+      #var: pkgs                                         Show all content in the list  
+      #var: web_servers                                  Show all keys and values
+      #var: pkgs[0]                                      Only show the 0 index in pkgs
+      #var: web_servers.keys()                           Show all keys
+      #var: web_servers['Linux']                         Show the value of key 'Linux'
+       var: web_servers.get('Linux')                     #Same as the upper one  

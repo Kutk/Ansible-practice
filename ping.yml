@@ -1,0 +1,4 @@
+---
+ - hosts: g23
+   tasks:
+   - ping:
